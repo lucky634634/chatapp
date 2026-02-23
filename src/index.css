@@ -1,0 +1,27 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text);
+}
+
+:root {
+    --background: hsl(0, 0%, 0%);
+    --background-secondary: hsl(0, 0%, 10%);
+    --text: hsl(0, 0%, 95%);
+    --element: hsl(0, 0%, 15%);
+}
+
+body {
+    background: var(--background);
+}
+
+a {
+    color: var(--text);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
