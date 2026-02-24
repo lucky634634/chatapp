@@ -1,4 +1,6 @@
 import NavBar from "../components/NavBar";
+import SignInWithButton from "../components/SignInWithButton";
+import { FaGoogle } from "react-icons/fa";
 import "./SignInPage.css";
 
 export default function SignInPage() {
@@ -18,7 +20,8 @@ export default function SignInPage() {
             </form>
             <div>-- or --</div>
             <div className="auth-services">
-                <button className="google-signin">Sign in with Google</button>
+                {/* <button className="google-signin">Sign in with Google</button> */}
+                <SignInWithButton provider="Google" icon={<FaGoogle />} onClick={() => alert("Sign in with Google")} />
             </div>
             <div className="signup-link">
                 Don't have an account? <a href="/signup">Sign Up</a>

@@ -1,5 +1,6 @@
 import "./SignUpPage.css"
 import NavBar from "../components/NavBar";
+import SignInWithButton from "../components/SignInWithButton";
 
 export default function SignUpPage() {
     return <>
@@ -19,7 +20,8 @@ export default function SignUpPage() {
             </form>
             <div>-- or --</div>
             <div className="auth-services">
-                <button className="google-signup">Sign up with Google</button>
+                {/* <button className="google-signup">Sign up with Google</button> */}
+                <SignInWithButton provider="Google" onClick={() => alert("Sign up with Google")} />
             </div>
             <div className="signin-link">
                 Already have an account? <a href="/signin">Sign In</a>
