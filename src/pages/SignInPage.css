@@ -6,14 +6,11 @@
     gap: 2rem;
     margin: 2rem auto;
     width: 500px;
-    max-width: 100%;
+    max-width: 90%;
     padding: 2rem;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     border-radius: 8px;
     background: var(--background-secondary);
+    z-index: -1;
 }
 
 .signin-form {
