@@ -8,32 +8,41 @@
 
 :root {
     --background: hsl(0, 0%, 0%);
-    --background-secondary: hsl(0, 0%, 10%);
+    --background-1: hsl(0, 0%, 5%);
+    --background-2: hsl(0, 0%, 10%);
     --text: hsl(0, 0%, 95%);
-    --element: hsl(0, 0%, 15%);
+    --text-1: hsl(0, 0%, 70%);
+    --border: hsl(0, 0%, 20%);
 }
 
 @media (prefers-color-scheme: light) {
     :root {
         --background: hsl(0, 0%, 100%);
-        --background-secondary: hsl(0, 0%, 90%);
+        --background-1: hsl(0, 0%, 95%);
+        --background-2: hsl(0, 0%, 90%);
         --text: hsl(0, 0%, 5%);
-        --element: hsl(0, 0%, 85%);
+        --text-1: hsl(0, 0%, 30%);
+        --border: hsl(0, 0%, 80%);
     }
 }
 
 [data-theme="dark"] {
     --background: hsl(0, 0%, 0%);
-    --background-secondary: hsl(0, 0%, 10%);
+    --background-1: hsl(0, 0%, 5%);
+    --background-2: hsl(0, 0%, 10%);
     --text: hsl(0, 0%, 95%);
-    --element: hsl(0, 0%, 15%);
+    --text-1: hsl(0, 0%, 70%);
+    --border: hsl(0, 0%, 20%);
+
 }
 
 [data-theme="light"] {
     --background: hsl(0, 0%, 100%);
-    --background-secondary: hsl(0, 0%, 90%);
+    --background-1: hsl(0, 0%, 95%);
+    --background-2: hsl(0, 0%, 90%);
     --text: hsl(0, 0%, 5%);
-    --element: hsl(0, 0%, 85%);
+    --text-1: hsl(0, 0%, 30%);
+    --border: hsl(0, 0%, 80%);
 }
 
 
@@ -45,7 +54,7 @@ body {
 
 button {
     font-family: inherit;
-    background-color: var(--background-secondary);
+    background-color: var(--background-1);
     color: var(--text);
     border: 1px solid;
     padding: 10px;
