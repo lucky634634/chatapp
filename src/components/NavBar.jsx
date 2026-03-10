@@ -2,6 +2,7 @@ import "./NavBar.css"
 import { FaSun } from "react-icons/fa6";
 import { FaMoon } from "react-icons/fa";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function NavBar() {
     const [currentTheme, setCurrentTheme] = useState(localStorage.getItem("theme") || "light");
@@ -19,15 +20,15 @@ export default function NavBar() {
     return <>
         <nav className="navbar">
             <div className="nav-left">
-                <a className="logo" href="/chaptpapp/">MyApp</a>
+                <Link className="logo" to="/">MyApp</Link>
             </div>
             <div className="nav-right">
                 <button className="theme-toggle" onClick={toggleTheme}>
                     {currentTheme === "dark" ? <FaSun /> : <FaMoon />}
                 </button>
                 <ul className="auth-links">
-                    <li><a href="/chatpapp/#/signin">Sign In</a></li>
-                    <li><a href="/chatpapp/#/signup">Sign Up</a></li>
+                    <li><Link to="/signin">Sign In</Link></li>
+                    <li><Link to="/signup">Sign Up</Link></li>
                 </ul>
             </div>
         </nav>
