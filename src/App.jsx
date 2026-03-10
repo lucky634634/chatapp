@@ -6,7 +6,7 @@ import SignUpPage from "./pages/SignUpPage";
 
 function App() {
 	return (
-		<HashRouter>
+		<HashRouter basename="/chatapp/">
 			<Routes>
 				<Route path="/" element={<HomePage />} />
 				<Route path="/#/signin" element={<SignInPage />} />
