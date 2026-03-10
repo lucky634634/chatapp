@@ -9,7 +9,7 @@ export default function NavBar() {
 
     const toggleTheme = () => {
         const currentTheme = localStorage.getItem("theme");
-        const newTheme = currentTheme === "dark" ? "light" : "dark";
+        const newTheme = currentTheme === "light" ? "dark" : "light";
         localStorage.setItem("theme", newTheme);
         document.documentElement.setAttribute("data-theme", newTheme);
         setCurrentTheme(newTheme);
