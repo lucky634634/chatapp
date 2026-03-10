@@ -6,13 +6,13 @@ import SignUpPage from "./pages/SignUpPage";
 
 function App() {
 	return (
-		<BrowserRouter>
+		<HashRouter basename="/chatapp">
 			<Routes>
 				<Route path="/" element={<HomePage />} />
 				<Route path="/#/signin" element={<SignInPage />} />
 				<Route path="/#/signup" element={<SignUpPage />} />
 			</Routes>
-		</BrowserRouter>
+		</HashRouter>
 	);
 }
 
