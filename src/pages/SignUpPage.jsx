@@ -2,11 +2,23 @@ import "./SignUpPage.css"
 import NavBar from "../components/NavBar";
 import SignInWithButton from "../components/SignInWithButton";
 import { auth, db } from "../api/Firebase";
-import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { createUserWithEmailAndPassword, onAuthStateChanged, updateProfile } from "firebase/auth";
 import { setDoc, doc } from "firebase/firestore";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 export default function SignUpPage() {
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, (user) => {
+            if (user) {
+                navigate(`/chat/${user.uid}`);
+            }
+        });
+        return unsubscribe;
+    }, [navigate]);
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (!e.target[0].value || !e.target[1].value || !e.target[2].value || !e.target[3].value || !e.target[4].value) {
