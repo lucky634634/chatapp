@@ -1,10 +1,9 @@
-// import { useEffect, useState } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { auth, db } from "../api/Firebase";
 import RoomSelect from "../components/RoomSelect";
-import { collection, getDocs, onSnapshot } from "firebase/firestore";
+import { collection, onSnapshot } from "firebase/firestore";
 
 export default function ChatPage() {
     const uid = useParams();
@@ -15,8 +14,6 @@ export default function ChatPage() {
         let unsubscribeSnapshot = () => { };
         const unsubscribeAuth = onAuthStateChanged(auth, (user) => {
             if (user) {
-                const uid = user.uid;
-                console.log(uid);
                 const roomsRef = collection(db, "rooms");
 
                 unsubscribeSnapshot = onSnapshot(roomsRef, (snapshot) => {
@@ -25,6 +22,7 @@ export default function ChatPage() {
                         data: doc.data(),
                     }));
                     setRooms(roomsData);
+                    console.log(roomsData);
                 }, (error) => {
                     console.error("Snapshot error:", error);
                 });
@@ -39,11 +37,14 @@ export default function ChatPage() {
     }, [navigate]);
 
     return <>
-        <span>{uid.uid}</span>
-        <div>
+        <ul className="room-list">
             {rooms.map((room) => (
-                <div key={room.id}>{room.id}</div>
+                // <div key={room.id}>{room.id}</div>
+                <RoomSelect key={room.id} id={room.id} data={room.data} />
             ))}
+        </ul>
+        <div className="chat-container">
+
         </div>
     </>;
 }
