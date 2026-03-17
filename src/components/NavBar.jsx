@@ -5,10 +5,9 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function NavBar() {
-    const [currentTheme, setCurrentTheme] = useState(localStorage.getItem("theme") || "light");
+    const [currentTheme, setCurrentTheme] = useState(localStorage.getItem("theme") || "dark");
 
     const toggleTheme = () => {
-        const currentTheme = localStorage.getItem("theme");
         const newTheme = currentTheme === "light" ? "dark" : "light";
         localStorage.setItem("theme", newTheme);
         document.documentElement.setAttribute("data-theme", newTheme);

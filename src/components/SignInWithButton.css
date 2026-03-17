@@ -2,4 +2,9 @@
     display: flex;
     border: none;
     font-size: x-large;
+    background: transparent;
+}
+
+.sign-in-with-button * {
+    color: var(--text);
 }

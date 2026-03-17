@@ -6,6 +6,7 @@ import { createUserWithEmailAndPassword, onAuthStateChanged, updateProfile } fro
 import { setDoc, doc } from "firebase/firestore";
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
+import { FaGoogle } from "react-icons/fa6";
 
 export default function SignUpPage() {
     const navigate = useNavigate();
@@ -87,7 +88,7 @@ export default function SignUpPage() {
             <div>-- or --</div>
             <div className="auth-services">
                 {/* <button className="google-signup">Sign up with Google</button> */}
-                <SignInWithButton provider="Google" onClick={() => alert("Sign up with Google")} />
+                <SignInWithButton provider="Google" icon={<FaGoogle />} onClick={() => alert("Sign up with Google")} />
             </div>
             <div className="signin-link">
                 Already have an account? <Link to="/signin">Sign In</Link>

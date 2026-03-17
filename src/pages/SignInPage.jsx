@@ -13,6 +13,10 @@ export default function SignInPage() {
             const email = e.target[0].value;
             const password = e.target[1].value;
             const rememberMe = e.target[2].checked;
+            if (!email || !password) {
+                alert("Please fill in all fields!");
+                return;
+            }
             const user = await HandleSignIn(email, password, rememberMe);
             if (!user) {
                 alert("User not found");
@@ -37,7 +41,7 @@ export default function SignInPage() {
                     <input type="checkbox" id="remember" />
                     <label htmlFor="remember">Remember me</label>
                 </div>
-                <button type="submit">Sign In</button>
+                <button type="submit" className="signin-button">Sign In</button>
             </form>
             <div>-- or --</div>
             <div className="auth-services">

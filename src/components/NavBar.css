@@ -2,8 +2,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
-    background: var(--background-1);
+    padding: 10px 20px;
+    border-radius: 20px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    background: var(--gradient);
+    box-shadow: var(--shadow-s);
 }
 
 .navbar ul {
@@ -22,6 +28,18 @@
 .navbar .nav-left .logo {
     font-size: 1.5rem;
     font-weight: bold;
+    text-decoration: none;
+    color: var(--text);
+}
+
+.nav-right .auth-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-right .auth-links a {
+    text-decoration: none;
+    color: var(--text);
 }
 
 .navbar .theme-toggle {
@@ -31,4 +49,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: transparent;
+    color: var(--text);
+}
+
+.navbar .theme-toggle * {
+    color: var(--text);
 }
